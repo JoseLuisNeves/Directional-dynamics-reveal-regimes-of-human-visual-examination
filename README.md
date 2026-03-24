@@ -41,38 +41,6 @@ pip install numpy pandas scipy scikit-learn statsmodels matplotlib tqdm torch
 | `tqdm` | Progress bars |
 | `torch` | Imported in `reflacxloader.py` |
 
-### Dataset paths
-
-All data paths are managed through a `paths.py` file that is **not included** in the repository (it is machine-specific). Create it at the root of the repository with the following structure:
-
-```python
-# paths.py
-dataset_paths = {
-    "reflacx": "/path/to/reflacx",   # root of the REFLACX dataset
-    "gazebase": "/path/to/gazebase", # root of the GazeBase dataset
-}
-```
-
-**REFLACX** is available at: https://physionet.org/content/reflacx-xray-localization/1.0.0/  
-**GazeBase** is available at: https://figshare.com/articles/dataset/GazeBase_Data_Repository/12912257
-
-The REFLACX root directory must contain a `jsons/` subdirectory with the following files (provided with the dataset): `transcripts.json`, `timestamps.json`, `abnormality_ellipses.json`, `img_dims.json`, `chest_bbs.json`.
-
-### Output structure
-
-All outputs are written to an `outputs/` directory created automatically at runtime:
-
-```
-outputs/
-├── tables/          # CSV result tables
-├── figures/         # PDF figures
-└── cache/           # Precomputed window features (.npz / .npy)
-```
-
-Caching is used extensively. The first run over a dataset will be slow as features are computed and saved; subsequent runs load from cache.
-
----
-
 ### Scripts
 
 #### Core infrastructure
