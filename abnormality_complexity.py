@@ -1,7 +1,3 @@
-"""
-Enhanced validation: Turn regimes predict scanpath topology beyond comprehensive baselines.
-Analyzes across multiple window sizes with median split for directional classification.
-"""
 import os
 import numpy as np
 import pandas as pd
@@ -9,7 +5,6 @@ from tqdm import tqdm
 import statsmodels.api as sm
 from statsmodels.stats.anova import anova_lm
 from scipy.stats import spearmanr, false_discovery_control
-
 from reflacxloader import ReflacxLoader
 
 # Config
